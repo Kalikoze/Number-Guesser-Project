@@ -16,6 +16,10 @@ var lastGuess = document.querySelector('.last-guess');
 var number = document.querySelector('.number');
 var highLow = document.querySelector('.high-low');
 
+/* Disable buttons in beginning */
+guessButton.disabled = true;
+clearButton.disabled = true;
+
   /* Random Number Generator */
 var random = function(min, max) {
   var random = Math.floor(Math.random() * (max - min + 1) + min);
@@ -56,6 +60,10 @@ resetButton.addEventListener('click', function(){
 /* Resets input after clicking Guess button*/
 guessButton.addEventListener('click', function() {
   guessNumber.value = "";
+  guessButton.disabled = true;
+  clearButton.disabled = true;
+  guessButton.style.backgroundColor = '#D0D2D3';
+  clearButton.style.backgroundColor = '#D0D2D3';
 })
 
 /* Too high, too low, or just right */
@@ -74,7 +82,10 @@ function boom () {
 }
 
 /* Colors of buttons when active or non-active */
+
 guessNumber.addEventListener('input', function(){
+  guessButton.disabled = false;
+  clearButton.disabled = false;
   guessButton.style.backgroundColor = '#929497';
   clearButton.style.backgroundColor = '#929497';
   if (guessNumber.value === "") {
@@ -84,6 +95,9 @@ guessNumber.addEventListener('input', function(){
     clearButton.style.backgroundColor = '#D0D2D3';
   }
 });
+
+
+
 
 
 
