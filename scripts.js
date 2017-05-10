@@ -21,7 +21,7 @@ guessButton.disabled = true;
 clearButton.disabled = true;
 setButton.disabled = true;
 
-  /* Random Number Generator */
+  /* Random Number Generator  with variables*/
 var random = function(min, max) {
   var random = Math.floor(Math.random() * (max - min + 1) + min);
   console.log(random);
@@ -31,7 +31,7 @@ var random = function(min, max) {
 var min = 1;
 var max = 100;
 
-var randomNumber = random(1, 100);
+var randomNumber = random(min, max);
 
 /* Colors of buttons when active or non-active */
 
@@ -74,6 +74,8 @@ setButton.addEventListener('click', function(event) {
   maxInput.value = "";
   setButton.disabled = true;
   setButton.style.backgroundColor = '#D0D2D3';
+  lastGuess.innerText = "Please choose a number between " + min + " and " + max;
+  highLow.innerText = "";
 });
 
 guessButton.addEventListener('click', function () {
@@ -117,7 +119,8 @@ function boom () {
 }   else if (parseInt(guessNumber.value) > randomNumber) {
       highLow.innerText = 'That is too high!';
 }   else if (parseInt(guessNumber.value) != randomNumber) {
-      highLow.innerText = "Try again!";
+      number.innerText = "Invalid";
+      highLow.innerText = "Please use numbers only";
 }   else {
       highLow.innerText = 'Boom!';
 }
