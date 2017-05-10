@@ -19,23 +19,54 @@ var highLow = document.querySelector('.high-low');
 /* Disable buttons in beginning */
 guessButton.disabled = true;
 clearButton.disabled = true;
+setButton.disabled = true;
 
   /* Random Number Generator */
 var random = function(min, max) {
   var random = Math.floor(Math.random() * (max - min + 1) + min);
   console.log(random);
   return parseInt(random);
-
 }
 
 var randomNumber = random(1, 100);
 
+/* Colors of buttons when active or non-active */
+
+guessNumber.addEventListener('input', function(){
+  guessButton.disabled = false;
+  clearButton.disabled = false;
+  guessButton.style.backgroundColor = '#929497';
+  clearButton.style.backgroundColor = '#929497';
+  if (guessNumber.value === "") {
+    guessButton.disabled = true;
+    clearButton.disabled = true;
+    guessButton.style.backgroundColor = '#D0D2D3';
+    clearButton.style.backgroundColor = '#D0D2D3';
+  }
+});
+
 /* Buttons*/
+function minMaxListener() {
+  setButton.disabled = false;
+  setButton.style.backgroundColor = '#929497';
+    if ((minInput.value === "") || (maxInput.value === "")) {
+      setButton.disabled = true;
+      setButton.style.backgroundColor = '#D0D2D3';
+    }
+}
+
+minInput.addEventListener('input', minMaxListener);
+
+maxInput.addEventListener('input', minMaxListener);
+
+
+
 setButton.addEventListener('click', function(event) {
   event.preventDefault();
   randomNumber = random(parseInt(minInput.value), parseInt(maxInput.value));
-  console.log(randomNumber);
-})
+  minInput.value = "";
+  maxInput.value = "";
+});
 
 guessButton.addEventListener('click', function () {
   lastGuess.innerText = "Your last guess was"
@@ -75,30 +106,17 @@ function boom () {
   if ((parseInt(guessNumber.value) < minInput) || (parseInt(guessNumber.value) < maxInput)) {
     highLow.innerText = "Please choose a number between " + minInput + " and " + maxInput;
   } else if (parseInt(guessNumber.value) < randomNumber) {
-    highLow.innerText = 'That is too low!';
-} else if (parseInt(guessNumber.value) > randomNumber) {
-    highLow.innerText = 'That is too high!';
-} else if (parseInt(guessNumber.value) != randomNumber) {
-    highLow.innerText = "Try again!";
-} else {
-    highLow.innerText = 'Boom!';
+      highLow.innerText = 'That is too low!';
+}   else if (parseInt(guessNumber.value) > randomNumber) {
+      highLow.innerText = 'That is too high!';
+}   else if (parseInt(guessNumber.value) != randomNumber) {
+      highLow.innerText = "Try again!";
+}   else {
+      highLow.innerText = 'Boom!';
 }
 }
 
-/* Colors of buttons when active or non-active */
 
-guessNumber.addEventListener('input', function(){
-  guessButton.disabled = false;
-  clearButton.disabled = false;
-  guessButton.style.backgroundColor = '#929497';
-  clearButton.style.backgroundColor = '#929497';
-  if (guessNumber.value === "") {
-    guessButton.disabled = true;
-    clearButton.disabled = true;
-    guessButton.style.backgroundColor = '#D0D2D3';
-    clearButton.style.backgroundColor = '#D0D2D3';
-  }
-});
 
 
 

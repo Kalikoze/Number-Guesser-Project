@@ -79,6 +79,10 @@ button:hover {
   background-color: #EB008B;
 }
 
+button:disabled {
+  background-color: 
+}
+
 .button-container {
   text-align: center;
 }
