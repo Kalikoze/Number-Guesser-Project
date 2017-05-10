@@ -78,6 +78,8 @@ guessNumber.addEventListener('input', function(){
   guessButton.style.backgroundColor = '#929497';
   clearButton.style.backgroundColor = '#929497';
   if (guessNumber.value === "") {
+    guessButton.disabled = true;
+    clearButton.disabled = true;
     guessButton.style.backgroundColor = '#D0D2D3';
     clearButton.style.backgroundColor = '#D0D2D3';
   }
