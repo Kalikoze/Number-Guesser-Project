@@ -45,7 +45,7 @@ guessNumber.addEventListener('input', function(){
   }
 });
 
-/* Buttons*/
+/*Function for listening to Min-Max */
 function minMaxListener() {
   setButton.disabled = false;
   setButton.style.backgroundColor = '#929497';
@@ -60,12 +60,16 @@ minInput.addEventListener('input', minMaxListener);
 maxInput.addEventListener('input', minMaxListener);
 
 
+/* Buttons*/
+
 
 setButton.addEventListener('click', function(event) {
   event.preventDefault();
   randomNumber = random(parseInt(minInput.value), parseInt(maxInput.value));
   minInput.value = "";
   maxInput.value = "";
+  setButton.disabled = true;
+  setButton.style.backgroundColor = '#D0D2D3';
 });
 
 guessButton.addEventListener('click', function () {
@@ -105,6 +109,7 @@ guessButton.addEventListener('click', function() {
 function boom () {
   if ((parseInt(guessNumber.value) < minInput) || (parseInt(guessNumber.value) < maxInput)) {
     highLow.innerText = "Please choose a number between " + minInput + " and " + maxInput;
+    console.log('error1');
   } else if (parseInt(guessNumber.value) < randomNumber) {
       highLow.innerText = 'That is too low!';
 }   else if (parseInt(guessNumber.value) > randomNumber) {
