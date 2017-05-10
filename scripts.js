@@ -65,7 +65,6 @@ maxInput.addEventListener('input', minMaxListener);
 
 /* Buttons*/
 
-
 setButton.addEventListener('click', function(event) {
   event.preventDefault();
   randomNumber = random(parseInt(minInput.value), parseInt(maxInput.value));
@@ -93,10 +92,9 @@ clearButton.addEventListener('click', function() {
 });
 
 resetButton.addEventListener('click', function(){
-  randomNumber = random();
-  console.log(randomNumber);
+  randomNumber = random(1, 100);
   guessNumber.value= "";
-  lastGuess.innerText = "";
+  lastGuess.innerText = "Guess a number between 1 and 100";
   number.innerText = "?";
   highLow.innerText = "";
 });
@@ -114,7 +112,6 @@ guessButton.addEventListener('click', function() {
 function boom () {
   if ((parseInt(guessNumber.value) < min) || (parseInt(guessNumber.value) > max)) {
     highLow.innerText = "Please choose a number between " + min + " and " + max;
-    console.log('error1')
   } else if (parseInt(guessNumber.value) < randomNumber) {
       highLow.innerText = 'That is too low!';
 }   else if (parseInt(guessNumber.value) > randomNumber) {

@@ -41,7 +41,7 @@ input {
   font-size: 200%;
   font-weight: lighter;
   height: 50px;
-  margin: 50px auto;
+  margin: 25px auto;
   width: 500px;
 }
 
@@ -71,7 +71,7 @@ button {
   font-size: 24px;
   font-weight: lighter;
   height: 40px;
-  margin: 50px auto;
+  margin: 25px auto;
   width: 225px;
 }
 
@@ -80,7 +80,7 @@ button:hover {
 }
 
 button:disabled {
-  background-color: 
+  background-color:
 }
 
 .button-container {
