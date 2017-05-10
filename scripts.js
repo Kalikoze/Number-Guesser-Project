@@ -46,6 +46,10 @@ guessButton.addEventListener('click', function () {
 
 clearButton.addEventListener('click', function() {
   guessNumber.value=""
+  guessButton.disabled = true;
+  clearButton.disabled = true;
+  guessButton.style.backgroundColor = '#D0D2D3';
+  clearButton.style.backgroundColor = '#D0D2D3';
 });
 
 resetButton.addEventListener('click', function(){
