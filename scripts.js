@@ -123,6 +123,11 @@ function boom () {
       highLow.innerText = "Please use numbers only";
 }   else {
       highLow.innerText = 'Boom!';
+      min = parseInt(min) - 10;
+      max = parseInt(max) + 10;
+      lastGuess.innerText = "The new range is " + min + " to " + max;
+      number.innerText = "?";
+      highLow.innerText = ""
 }
 }
 

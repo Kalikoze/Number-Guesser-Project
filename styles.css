@@ -80,7 +80,7 @@ button:hover {
 }
 
 button:disabled {
-  background-color:
+  background-color: #D0D2D3;
 }
 
 .button-container {
