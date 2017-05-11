@@ -129,7 +129,9 @@ function boom () {
       lastGuess.innerText = "The new range is " + min + " to " + max;
       number.innerText = "Boom!";
       highLow.innerText = "";
-      return random(min, max);
+      randomNumber = random(min, max);
+      return randomNumber;
+
 }
 }
 
