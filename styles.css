@@ -13,9 +13,8 @@ body {
 }
 
 header {
-  text-align: center;
-  height: 50px;
   height: 150px;
+  text-align: center;
 }
 
 .app-name1 {
@@ -58,8 +57,8 @@ input {
 }
 
 input::placeholder {
-    color: #D0D2D3;
-    font-weight: lighter;
+  color: #D0D2D3;
+  font-weight: lighter;
 }
 
 button {
@@ -73,14 +72,6 @@ button {
   height: 40px;
   margin: 25px auto;
   width: 225px;
-}
-
-.disabled {
-  background-color: #D0D2D3;
-}
-
-.enabled {
-  background-color: #929497;
 }
 
 button:hover {
@@ -103,9 +94,9 @@ button:disabled {
 
 p, .main-text {
   color: #404041;
-  text-align: center;
   font-size: 24px;
   font-weight: lighter;
+  text-align: center;
 }
 
 .number {
