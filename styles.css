@@ -63,7 +63,7 @@ input::placeholder {
 }
 
 button {
-  background-color: #D0D2D3;
+  background-color: #929497;
   border-radius: 20px;
   border-style: none;
   color: #FFFFFF;
@@ -73,6 +73,14 @@ button {
   height: 40px;
   margin: 25px auto;
   width: 225px;
+}
+
+.disabled {
+  background-color: #D0D2D3;
+}
+
+.enabled {
+  background-color: #929497;
 }
 
 button:hover {

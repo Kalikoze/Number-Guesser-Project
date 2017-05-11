@@ -38,23 +38,17 @@ var randomNumber = random(min, max);
 guessNumber.addEventListener('input', function(){
   guessButton.disabled = false;
   clearButton.disabled = false;
-  guessButton.style.backgroundColor = '#929497';
-  clearButton.style.backgroundColor = '#929497';
   if (guessNumber.value === "") {
     guessButton.disabled = true;
     clearButton.disabled = true;
-    guessButton.style.backgroundColor = '#D0D2D3';
-    clearButton.style.backgroundColor = '#D0D2D3';
   }
 });
 
 /*Function for listening to Min-Max */
 function minMaxListener() {
   setButton.disabled = false;
-  setButton.style.backgroundColor = '#929497';
     if ((minInput.value === "") || (maxInput.value === "")) {
       setButton.disabled = true;
-      setButton.style.backgroundColor = '#D0D2D3';
     }
 }
 
@@ -73,7 +67,6 @@ setButton.addEventListener('click', function(event) {
   minInput.value = "";
   maxInput.value = "";
   setButton.disabled = true;
-  setButton.style.backgroundColor = '#D0D2D3';
   lastGuess.innerText = "Please choose a number between " + min + " and " + max;
   highLow.innerText = "";
 });
@@ -89,8 +82,6 @@ clearButton.addEventListener('click', function() {
   guessNumber.value=""
   guessButton.disabled = true;
   clearButton.disabled = true;
-  guessButton.style.backgroundColor = '#D0D2D3';
-  clearButton.style.backgroundColor = '#D0D2D3';
 });
 
 resetButton.addEventListener('click', function(){
@@ -108,8 +99,6 @@ guessButton.addEventListener('click', function() {
   guessNumber.value = "";
   guessButton.disabled = true;
   clearButton.disabled = true;
-  guessButton.style.backgroundColor = '#D0D2D3';
-  clearButton.style.backgroundColor = '#D0D2D3';
 })
 
 /* Too high, too low, or just right */
