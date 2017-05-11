@@ -94,7 +94,9 @@ clearButton.addEventListener('click', function() {
 });
 
 resetButton.addEventListener('click', function(){
-  randomNumber = random(1, 100);
+  min = 1;
+  max = 100;
+  randomNumber = random(min, max);
   guessNumber.value= "";
   lastGuess.innerText = "Guess a number between 1 and 100";
   number.innerText = "?";
@@ -126,8 +128,8 @@ function boom () {
       max = parseInt(max) + 10;
       lastGuess.innerText = "The new range is " + min + " to " + max;
       number.innerText = "Boom!";
-      highLow.innerText = ""
-      return randomNumber;
+      highLow.innerText = "";
+      return random(min, max);
 }
 }
 
