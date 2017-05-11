@@ -2,8 +2,6 @@
 var guessNumber = document.getElementById("#guess-number");
 var minInput = document.getElementById('minimum-number');
 var maxInput = document.getElementById('maximum-number');
-// var minNumber = 1
-// var maxNumber = 100
 
 /* Buttons for Number Guesser */
 var setButton = document.querySelector('.set');
@@ -16,12 +14,7 @@ var lastGuess = document.querySelector('.last-guess');
 var number = document.querySelector('.number');
 var highLow = document.querySelector('.high-low');
 
-/* Disable buttons in beginning */
-guessButton.disabled = true;
-clearButton.disabled = true;
-setButton.disabled = true;
-
-  /* Random Number Generator  with variables*/
+  /* Random Number Generator with variables*/
 var random = function(min, max) {
   var random = Math.floor(Math.random() * (max - min + 1) + min);
   console.log(random);
@@ -32,8 +25,6 @@ var min = 1;
 var max = 100;
 
 var randomNumber = random(min, max);
-
-/* Colors of buttons when active or non-active */
 
 guessNumber.addEventListener('input', function(){
   guessButton.disabled = false;
